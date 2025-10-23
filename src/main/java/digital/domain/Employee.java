@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+import java.util.Objects;
+
+@Data // Аннотация генерирует getter, setter, toString, equals, hashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class Employee {
@@ -12,4 +14,22 @@ public class Employee {
     private String firstName;
     private String lastName;
     private int salary;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return id + "," + firstName + "," + lastName + "," + salary;
+    }
 }
