@@ -23,13 +23,19 @@ public class App
         employees.add(new Employee(5, "Света", "Борисенко", 680));
 
         // Проверка сервиса сотрудников
+        System.out.println("Список сотрудников с зарплатой больше или равной 500: ");
         System.out.println(employeeService.getEmployeesBySalaryGreaterThan(500, employees));
+        System.out.println("Список сотрудников ключ=значение: ");
         System.out.println(employeeService.getEmployeeMap(employees));
+        System.out.println("Сотрудник найденный по id: ");
         System.out.println(employeeService.getEmployeesById(1, employees));
 
         // Проверка сервиса работы с файлами
+        System.out.println("Сохранение данных сотрудников в файл: ");
         fileService.saveEmployeesToFile(employees, "employees.txt");
+        System.out.println("Чтение файла с сотрудниками: ");
         System.out.println(fileService.loadEmployeesFromFile("employees.txt"));
+        System.out.println("Вызов исключения на несуществующий файл: ");
         fileService.loadEmployeesFromFile("employees2.txt");
     }
 }
