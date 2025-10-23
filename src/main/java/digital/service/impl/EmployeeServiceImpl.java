@@ -10,6 +10,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class EmployeeServiceImpl implements EmployeeService {
+
+    @Override
     public Employee getEmployeesById(int id, List<Employee> employees) {
         for (Employee employee : employees) {
             if(id == employee.getId()) return employee;
@@ -17,6 +19,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         throw new EmployeeNotFoundException("Employee with id " + id + " not found");
     }
 
+    @Override
     public List<Employee> getEmployeesBySalaryGreaterThan(int targetSalary, List<Employee> employees){
         List<Employee> employeesBySalary = new ArrayList<>();
 
@@ -25,9 +28,11 @@ public class EmployeeServiceImpl implements EmployeeService {
                 employeesBySalary.add(employee);
             }
         }
+
         return employeesBySalary;
     }
 
+    @Override
     public Map<String, Employee> getEmployeeMap(List<Employee> employees){
         return employees.stream()
                 .collect(Collectors.toMap(

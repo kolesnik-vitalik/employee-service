@@ -1,6 +1,8 @@
 package digital;
 
 import digital.domain.Employee;
+import digital.service.EmployeeService;
+import digital.service.FileService;
 import digital.service.impl.EmployeeServiceImpl;
 import digital.service.impl.FileServiceImpl;
 
@@ -10,8 +12,8 @@ import java.util.List;
 public class App
 {
     public static void main( String[] args ){
-        EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
-        FileServiceImpl fileService = new FileServiceImpl();
+        EmployeeService employeeService = new EmployeeServiceImpl();
+        FileService fileService = new FileServiceImpl();
 
         List<Employee> employees = new ArrayList<>();
         employees.add(new Employee(1, "Ваня", "Кочетов", 500));
