@@ -1,3 +1,5 @@
+Maven + Java 17 + Lombok + JUnit 5
+
 **Для запуска проекта вам потребуется:**
 1) Клонировать репозиторий командой **git clone https://github.com/kolesnik-vitalik/employee-service.git**
 2) Перейти в проект **cd employee-service**
