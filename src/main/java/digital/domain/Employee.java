@@ -1,12 +1,14 @@
 package digital.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 
 @Data // Аннотация генерирует getter, setter, toString, equals, hashCode
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Employee {
@@ -26,10 +28,5 @@ public class Employee {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return id + "," + firstName + "," + lastName + "," + salary;
     }
 }
